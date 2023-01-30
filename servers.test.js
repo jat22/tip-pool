@@ -6,7 +6,6 @@ describe("Servers test (with setup and tear-down)", function() {
 
   it('should add a new server to allServers on submitServerInfo()', function () {
     submitServerInfo();
-
     expect(Object.keys(allServers).length).toEqual(1);
     expect(allServers['server' + serverId].serverName).toEqual('Alice');
   });
@@ -18,8 +17,8 @@ describe("Servers test (with setup and tear-down)", function() {
     let updatedTable = document.querySelectorAll('#serverTable tbody tr td');
 
     expect(updatedTable.length).toEqual(2);
-    expect(updatedTable[0]).toEqual('Alice');
-    expect(updatedTable[1]).toEqual('$0.00');
+    expect(updatedTable[0].innerHTML).toEqual('Alice');
+    expect(updatedTable[1].innerHTML).toEqual('$0.00');
  
   })
 
